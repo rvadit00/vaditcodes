@@ -1,8 +1,5 @@
-loaded & registered
-connected to db
-statement created
-Count of supplier_gstin16
-Count of Purchaser_gstin48
+Count of supplier_gstin : 16
+Count of Purchaser_gstin : 48
 --------------------------------------
 supplier_gstin  | purchaser_gstin | no. of rows
 --------------------------------------
