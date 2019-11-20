@@ -14,9 +14,7 @@ public class Demo
 		Statement stmt=null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("loaded & registered");
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=root");
-			System.out.println("connected to db");
 			stmt=con.createStatement();
 			String sql1="SELECT COUNT(DISTINCT supplier_gstin) AS count1 FROM test.test_data";
 			String sql2="SELECT COUNT(DISTINCT purchaser_gstin) AS count2 FROM test.test_data";
@@ -27,20 +25,19 @@ public class Demo
 			int count3=0;
 			String sup="";
 			String pur="";
-			System.out.println("statement created");
 			ResultSet rs1 = stmt.executeQuery(sql1);
 		    while(rs1.next())
 		    {
 		    	count1 = rs1.getInt("count1");
 		    }
-		    System.out.println("Count of supplier_gstin"+count1);
+		    System.out.println("Count of supplier_gstin : "+count1);
 		    
 		    ResultSet rs2 = stmt.executeQuery(sql2);
 		    while(rs2.next())
 		    {
 		    	count2 = rs2.getInt("count2");
 		    }
-		    System.out.println("Count of Purchaser_gstin"+count2);
+		    System.out.println("Count of Purchaser_gstin : "+count2);
 		    System.out.println("--------------------------------------");
 		    System.out.println("supplier_gstin  | purchaser_gstin | no. of rows");
 		    System.out.println("--------------------------------------");
